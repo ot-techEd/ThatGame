@@ -119,4 +119,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemType: 0
-  itemSpawnSpeed: 4
+  itemSpawnSpeed: 10
+  scoreAmount: -5

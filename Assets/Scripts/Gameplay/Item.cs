@@ -9,6 +9,8 @@ public class Item : MonoBehaviour
 
     [SerializeField] private float itemSpawnSpeed = 2.0f;
 
+    [SerializeField] private int scoreAmount = 1;
+
     private void Update()
     {
         transform.Translate(Vector3.forward * itemSpawnSpeed * Time.deltaTime);
@@ -19,13 +21,18 @@ public class Item : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Destroy(gameObject);
-            //Inform GameManager that you hit player
+            GameManager.GetGameManager().PlayerTookHit(this, scoreAmount);
 
         }
         else if (other.CompareTag("Exit"))
         {
             Destroy(gameObject);
         }
+    }
+
+    public ItemType GetItemType()
+    {
+        return itemType;
     }
 }
 

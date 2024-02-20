@@ -118,5 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f59d748caf4724555a6336c55889fa0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemType: 0
-  itemSpawnSpeed: 2
+  itemType: 1
+  itemSpawnSpeed: 5
+  scoreAmount: 10
