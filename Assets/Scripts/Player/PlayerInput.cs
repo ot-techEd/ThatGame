@@ -33,7 +33,7 @@ public class PlayerInput : MonoBehaviour
 
 #if UNITY_EDITOR
 
-        GetPCInput();
+        GetMobileInput();
 
 #elif UNITY_STANDALONE
 
@@ -67,11 +67,13 @@ public class PlayerInput : MonoBehaviour
                 {
                     xMovement = - 1.0f;
                 }
-                else
-                {
-                    xMovement = 0;
-                }
+
             }
+        }
+
+        else
+        {
+            xMovement = 0;
         }
     }
 }
