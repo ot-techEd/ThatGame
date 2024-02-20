@@ -29,13 +29,20 @@ public class PlayerInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-#if UNITY_STANDALONE || UNITY_EDITOR
+
+
+#if UNITY_EDITOR
+
+        GetPCInput();
+
+#elif UNITY_STANDALONE
 
         GetPCInput();
 
 #elif UNITY_ANDROID || UNITY_IOS
 
         GetMobileInput();
+
 #endif
 
     }
@@ -47,6 +54,24 @@ public class PlayerInput : MonoBehaviour
 
     private void GetMobileInput()
     {
+        if (Input.touchCount > 0)
+        {
 
+            foreach (Touch touch in Input.touches)
+            {
+                if (touch.position.x > Screen.width / 2)
+                {
+                    xMovement = 1.0f;
+                }
+                else if (touch.position.x < Screen.width / 2)
+                {
+                    xMovement = - 1.0f;
+                }
+                else
+                {
+                    xMovement = 0;
+                }
+            }
+        }
     }
 }
